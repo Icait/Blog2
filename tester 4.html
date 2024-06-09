@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form on click</title>
+    <style>
+        form{
+  width: 200px;
+  border: solid #ccc 1px;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+<button id="f1" onclick="JFunction()">Join Us</button>
+<br>
+<br>
+<button id="f2" onclick="AFunction()">Ask Us </button>
+<div id="JDiv"> 
+<form id="form1">
+        <label for="username">Name:</label>
+        <input type="text" id="username" placeholder="Name" name="username" required>
+        <label for="email">Email:</label>
+        <input type="text" id="email" placeholder="Email" name="email" required>
+        <label for="country">Country:</label>
+        <input type="text" id="username" placeholder="Country" name="username" required>
+        <button type="submit">Submit</button>
+</form>
+</div>
+<div id="ADiv"> 
+<form id="form2" style="display: none">
+        <label for="username">Name:</label>
+        <input type="text" id="username" placeholder="Name" name="username" required>
+        <label for="email">Email:</label>
+        <input type="text" id="email" placeholder="Email" name="email" required>
+        <label for="country">Country:</label>
+        <input type="text" id="username" placeholder="Country" name="username" required>
+        <label for="content">What is your query?:</label>
+        <textarea id="content" placeholder="Query" name="content" required></textarea>
+        <button type="submit">Submit</button>
+</form>
+</div>
+<script>
+    function JFunction() {
+  var x = document.getElementById("JDiv");
+  if (x.style.display === "none") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+function AFunction() {
+  var x = document.getElementById("ADiv");
+  if (x.style.display === "none") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+</body>
+</html>

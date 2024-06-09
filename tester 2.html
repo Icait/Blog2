@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Comment Section</title>
+        <style>
+            .comment {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f9f9f9;
+}
+.comment h3 {
+    font-size: 16px;
+    margin: 0;
+}
+.comment p {
+    font-size: 14px;
+}
+
+        </style>
+    </head>
+    <body>
+        <section id="comment-section">
+            <!-- Comments will be displayed here -->
+            <div class="comment">
+                <h3>User Name</h3>
+                <p>This is a comment...</p>
+            </div>
+            <form id="comment-form">
+                <label for="username">Name:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" required></textarea>
+                <button type="submit">Submit Comment</button>
+            </form>
+        </section>
+    </body>
+</html>

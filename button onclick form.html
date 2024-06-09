@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stack overflow</title>
+    <style>
+
+
+p {
+  font-size: 3vh;
+  color: #c2e8ff;
+}
+
+button {
+  height: 10vh;
+  width: 20vh;
+  font-size: 3vh;
+  background-color: #27476E;
+  border-radius: 22px;
+  border-color: #daf1ff;
+  border-width: 2px;
+  border-style: solid;
+}
+
+button:hover {
+  background-color: #192c44;
+}
+
+.body-box {
+  display: flex;
+  justify-content: center;
+}
+
+
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+.form-container {
+  display: block;
+  max-width: 300px;
+  padding: 10px;
+}
+    </style>
+</head>
+<body>
+    <script>
+
+const popUpForm = document.getElementById("popUpForm");
+var button = document.getElementById("addBook");
+
+
+button.addEventListener("click", function() {
+  document.getElementById("popUpForm").style.display = "block";
+ 
+});
+    </script>
+    <div class="head-box">
+      <div class="body-box">
+        <button id="addBook"><p>Join Us</p></button>
+      </div>
+
+      <div class="form-popup" id="popUpForm">
+        <form action="retrive.js" method="post" class="form-container">
+            <label for="username">Name:</label>
+            <input type="text" id="username" placeholder="Name" name="username" required>
+            <label for="email">Email:</label>
+            <input type="text" id="email" placeholder="Email" name="email" required>
+            <label for="country">Country:</label>
+            <input type="text" id="username" placeholder="Country" name="username" required>
+            <button type="submit">Submit</button>
+        </form>
+      </div>
+</body>
+</html>

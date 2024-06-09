@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery toggle</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 100px;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+        }
+ 
+        .toggle-outer{
+            height: 20px;
+            width: 50px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            background-color: #f4f4f4;
+            margin: auto;
+            position: relative;
+            transition: all 0.3s ease-in;
+            cursor: pointer;
+        }
+ 
+        .toggle-outer.checked{
+            background-color: grey;
+        }
+ 
+        .toggle-inner{
+            height: 18px;
+            width: 18px;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            transition: all 0.3s ease-in;
+        }
+ 
+        .toggle-outer.checked .toggle-inner{
+            left: 30px;
+        }
+ 
+        input[type="checkbox"]{
+            display: none;
+        }
+ 
+        #toggleLabel{
+            cursor: pointer;
+        }
+ 
+        #result{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="toggle-outer">
+            <div class="toggle-inner">
+                <input type="checkbox" id="toggle">
+            </div>
+        </div>
+        <label id="toggleLabel" for="toggle">
+            Join Us
+        </label>
+        <div id="result">
+            <form id="form1">
+                <label for="username">Name:</label>
+                <input type="text" id="username" placeholder="Name" name="username" required>
+                <label for="email">Email:</label>
+                <input type="text" id="email" placeholder="Email" name="email" required>
+                <label for="country">Country:</label>
+                <input type="text" id="username" placeholder="Country" name="username" required>
+                <button type="submit">Submit</button>
+        </form>
+        </div>
+    </div>
+ 
+    <!-- jQuery CDN Link -->
+    <script src=
+    "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+                integrity=
+    "sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+                crossorigin="anonymous"
+                referrerpolicy="no-referrer">
+        </script>
+     
+        <!-- Custom Script -->
+        <script>
+            $(document).ready(() => {
+                $('.toggle-outer').click(function(){
+                    $(this).toggleClass('checked');
+                    const res = $('#result');
+                    if(res.css('display') === 'none'){
+                        $('#toggle').attr('checked', true);
+                        $('#toggleLabel').text('OFF');
+                    }
+                    else{
+                        $('#toggle').attr('checked', false);
+                        $('#toggleLabel').text('ON')
+                    }
+                    res.toggle();                
+                })
+            });
+        </script>
+</body>
+</html>

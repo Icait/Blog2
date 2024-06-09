@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title> 
+</head>
+<body style="margin-right: 150px; margin-left: 150px;"> 
+    <button id="join">Join Us</button>
+    <button id="ask">Ask Us</button>
+    <script>
+    document.getElementById("join").addEventListener("click", function () {
+
+    }); 
+    </script>
+    <form id="ask-form">
+        <label for="username">Name:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+        <label for="country">Country:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="content">What is your query?:</label>
+        <textarea id="content" name="content" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <h3>Please share your feedback with us</h3>
+            <div id="comment-container">
+            </div>
+            <textarea name="" id="new-comment" cols="60" rows="5"></textarea>
+            <br>
+            <button id="btn-post">Post</button>
+            <script>
+          document.getElementById("btn-post").addEventListener("click", function () {
+              const newComment = document.getElementById("new-comment").value;
+              const commentContainer = document.getElementById("comment-container");
+              const commentElement = document.createElement("p");
+              commentElement.innerText = newComment;
+              commentContainer.appendChild(commentElement);
+              document.getElementById("new-comment").value = "";
+          });
+            </script>
+</body>
+</html>
